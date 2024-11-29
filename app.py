@@ -47,7 +47,7 @@ def overlay_heatmap_on_image(img, heatmap, alpha=0.4):
     return tf.keras.preprocessing.image.array_to_img(superimposed_img)
 
 # Load the trained model
-MODEL_PATH = os.getenv("MODEL_PATH", r"C:\Users\mithu\Desktop\osteo_vision\src\models\OSTEO_VISION_MODEL_6_ Knee Osteoarthritis Detection with Fine-Tuned ResNet152V2 on dataset 3 MODEL_6.h5")
+MODEL_PATH = os.getenv("MODEL_PATH", r"OSTEO_VISION_MODEL_6_ Knee Osteoarthritis Detection with Fine-Tuned ResNet152V2 on dataset 3 MODEL_6.h5")
 try:
     model = tf.keras.models.load_model(MODEL_PATH)
 except Exception as e:
@@ -61,8 +61,8 @@ grad_model = tf.keras.models.Model(
 )
 
 # Sidebar with images
-st.sidebar.image(r"C:\Users\mithu\Desktop\osteo_vision\app\img\jssate .png", caption="JSSATE-B", width=220)
-st.sidebar.image(r"C:\Users\mithu\Desktop\osteo_vision\app\img\jssaher.jpg", caption="JSSAHER", width=220)
+st.sidebar.image(r"jssate .png", caption="JSSATE-B", width=220)
+st.sidebar.image(r"jssaher.jpg", caption="JSSAHER", width=220)
 
 # Sidebar for user inputs
 uploaded_file = st.sidebar.file_uploader("Upload an X-ray image", type=["png", "jpg", "jpeg"])
